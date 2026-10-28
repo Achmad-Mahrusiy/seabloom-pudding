@@ -40,13 +40,13 @@ class HomeController extends Controller
         ];
 
         // Tempel link Google Form pemesanan yang asli di sini.
-        $googleFormUrl = '';
+        $googleFormUrl = 'https://bit.ly/SeabloomPuddingCaramel';
 
         // Isi jika akun media sosial resmi sudah tersedia.
         $instagramUrl = 'https://www.instagram.com/seapudd_?srtk=ZXM4bmExYjhnZHk0';
 
         // Harga bundling dua varian bebas.
-        $bundlePrice = 12000;
+        $bundlePrice = 18000;
 
         return view('home', compact(
             'products',

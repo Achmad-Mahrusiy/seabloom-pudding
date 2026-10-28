@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#e8fbff">
 
-    <title>Seabloom Pudding | A Sweet Escape in Every Spoonful</title>
+    <title>Seabloom Pudding</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 
     <meta name="description"
         content="Seabloom Pudding adalah caramel pudding dengan bahan lokal: ubi jalar ungu, ubi jalar kuning, dan bunga telang.">
@@ -43,11 +44,17 @@
             <a href="#story">Cerita Kami</a>
             <a href="#ingredients">Bahan Lokal</a>
 
+            @if ($instagramUrl)
+                <a href="{{ $instagramUrl }}" class="nav-order nav-outline" target="_blank"
+                    rel="noopener noreferrer">Instagram ↗</a>
+            @endif
+
             <a href="{{ $googleFormUrl ?: '#order' }}" class="nav-order form-link"
                 data-form-configured="{{ $googleFormUrl ? 'true' : 'false' }}"
                 @if ($googleFormUrl) target="_blank" rel="noopener noreferrer" @endif>
                 Pesan Sekarang ↗
             </a>
+
         </nav>
     </header>
 
@@ -216,8 +223,8 @@
                 </h2>
 
                 <p>
-                    Pilih dua varian bebas dalam satu paket bundling
-                    dan nikmati lebih banyak rasa favoritmu.
+                    Dapatkan ketiga varian, Sunny Shore, Twilight Sea, dan
+                    Ocean Blue, dalam satu paket bundling yang lebih hemat.
                 </p>
 
                 <div class="bundle-price">
@@ -227,7 +234,7 @@
                         Rp{{ number_format($bundlePrice, 0, ',', '.') }}
                     </strong>
 
-                    <small>Untuk 2 cup · pilih 2 varian bebas</small>
+                    <small>Untuk 3 cup · semua varian</small>
                 </div>
 
                 <a href="{{ $googleFormUrl ?: '#order' }}" class="button button-dark form-link"
@@ -260,12 +267,12 @@
                 </div>
 
                 <div class="bundle-choice-note">
-                    <strong>2 OF 3</strong>
-                    <span>Pilih dua varian bebas</span>
+                    <strong>3 CUP</strong>
+                    <span>Semua varian dalam satu paket</span>
                 </div>
 
                 <p class="bundle-caption">
-                    YOUR MIX, YOUR WAY · Rp12.000
+                    ALL VARIANTS · Rp{{ number_format($bundlePrice, 0, ',', '.') }}
                 </p>
 
             </div>
@@ -354,7 +361,7 @@
 
                 <div class="ingredient-item">
                     <span class="ingredient-number">03</span>
-                    <span class="ingredient-emoji">🦋</span>
+                    <span class="ingredient-emoji">❀</span>
 
                     <div>
                         <h3>Bunga Telang</h3>
@@ -391,7 +398,7 @@
             </div>
 
             <small>
-                Harga per cup Rp7.000 · Bundling 2 cup Rp12.000
+                Harga per cup Rp7.000 · All Varian Rp18.000
             </small>
         </section>
 
@@ -416,14 +423,28 @@
                     <span>🎓</span>
                     <h3>Antar kampus</h3>
                     <p>Pengantaran ke lokasi kampus sesuai kesepakatan.</p>
-                    <small>Konfirmasi saat pre-order</small>
+                    <small>Gratis ongkir</small>
                 </article>
 
                 <article>
                     <span>🛵</span>
                     <h3>Antar luar kampus</h3>
                     <p>Biaya pengantaran menyesuaikan jarak tujuan.</p>
-                    <small>Ongkir berdasarkan jarak</small>
+
+                    <ul class="delivery-tiers">
+                        <li>
+                            <span>Kurang dari 2 km</span>
+                            <strong class="tier-free">Gratis ongkir</strong>
+                        </li>
+                        <li>
+                            <span>Jarak 2-5 km</span>
+                            <strong>Rp5.000</strong>
+                        </li>
+                        <li>
+                            <span>Lebih dari 5 km</span>
+                            <strong>+Rp2.000 / km</strong>
+                        </li>
+                    </ul>
                 </article>
             </div>
         </section>
